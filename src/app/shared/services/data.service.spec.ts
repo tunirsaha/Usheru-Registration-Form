@@ -47,7 +47,7 @@ describe('DataService', () => {
     });
 
     it('should search for username', () => {
-        const input = 'test';
+        const input = 'admin123';
         const mockResponse: UserName = {
             id: 1,
             username: 'admin123'

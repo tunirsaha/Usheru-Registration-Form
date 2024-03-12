@@ -13,7 +13,6 @@ describe('AppComponent', () => {
     const dataServiceSpy = jasmine.createSpyObj('DataService', ['GetCountries', 'SearchUserName', 'SubmitForm']);
 
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
       imports: [ReactiveFormsModule],
       providers: [
         FormBuilder,
@@ -55,7 +54,7 @@ describe('AppComponent', () => {
   });
 
   it('should load countries', () => {
-    const countryResponse = { error: false, msg: 'success', data: [{ name: 'Country 1', flag: '' }, { name: 'Country 2', flag: '' }] };
+    const countryResponse = { error:false, msg: '', data: [{ name: 'Country 1', flag: '' }, { name: 'Country 2', flag: '' }] };
     dataService.GetCountries.and.returnValue(of(countryResponse));
 
     component.loadCountries();
@@ -82,8 +81,6 @@ describe('AppComponent', () => {
     expect(dataService.SubmitForm).toHaveBeenCalledTimes(1);
     expect(dataService.SubmitForm).toHaveBeenCalledWith(formData);
     expect(component.submitting).toBeFalsy();
-    // You can add more expectations based on the response handling in the component
   });
 
-  // Add more test cases as needed
 });
