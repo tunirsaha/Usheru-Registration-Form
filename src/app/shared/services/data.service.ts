@@ -29,7 +29,6 @@ export class DataService {
 
   public SubmitForm(formData: any): Observable<ApiResponse> {
     // mimicked a post api
-    console.log(formData)
     return this.http.post<any>(FORM_SUBMIT_API, formData)
   }
 }
