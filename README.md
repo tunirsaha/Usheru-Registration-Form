@@ -8,7 +8,7 @@ Please Note:
 
 1. The API responses are stored in 'assets/json/' folder.
 2. Some already created usernames are 'admin123' and 'admin456' for negative scenario testing.
-3. For testing API Failures, the .json files need to be modified
+3. For testing API Failures, the .json files need to be modified with the 'error' key set to false, with a error message in the 'msg' key and 'data' key being []
 
 ## Development server
 
